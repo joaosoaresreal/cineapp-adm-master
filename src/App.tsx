@@ -13,11 +13,11 @@ export default function App() {
   return (
     <StyletronProvider value={engine}>
       <BaseProvider theme={LightTheme}>
-        <HeaderApp />
         <BrowserRouter>
+          <HeaderApp />
           <Routes>
-            <Route path='/' element={<Home/>}/>            
-            <Route path='/categorias' element={<Categorias/>}/>
+            <Route path='/' element={<Home />} />
+            <Route path='/categorias' element={<Categorias />} />
           </Routes>
         </BrowserRouter>
       </BaseProvider>
