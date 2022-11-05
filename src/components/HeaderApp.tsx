@@ -5,8 +5,14 @@ import { Link } from 'react-router-dom';
 export function HeaderApp() {
 
   return (
-    <HeaderNavigation
-    >
+    <HeaderNavigation  overrides={{
+      Root: {
+        style: ({ $theme }) => ({
+          outline: `${$theme.colors.backgroundAccent} solid`,
+          backgroundColor: $theme.colors.backgroundAccent
+        })
+      }
+    }}>
       <StyledNavigationList $align={ALIGN.left}>
         <StyledNavigationItem>
           <Link to='/'>
@@ -25,7 +31,9 @@ export function HeaderApp() {
         </StyledNavigationItem>
         <StyledNavigationItem>
           <StyledLink href="#basic-link2">
-            Tab Link Two
+          <Link to='/filmes'>
+              Filmes
+            </Link>
           </StyledLink>
         </StyledNavigationItem>
       </StyledNavigationList>
